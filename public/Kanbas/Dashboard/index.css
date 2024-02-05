@@ -1,0 +1,20 @@
+.course_card {
+    box-shadow: 0px 2px 3px 1px lightgray;
+    margin-bottom: 15px;
+    width: 300px;
+}
+
+.col-card {
+    padding-right: 310px;
+}
+
+.course-code {
+    color: grey;
+    margin-bottom: 0px;
+}
+
+.course-link {
+    text-decoration: none;
+    color: #3072dc;
+    font-weight: bold;
+}

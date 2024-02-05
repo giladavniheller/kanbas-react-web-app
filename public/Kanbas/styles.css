@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+body * {
+    font-family: Arial, Helvetica, sans-serif;
+}  
+
+.end-with-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.fake-link {
+    color: red;
+    text-decoration: none;
+}
