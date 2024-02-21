@@ -1,0 +1,27 @@
+.wd-kanbas-navigation {
+  background-color: black;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  width: 90px;
+  min-width: 90px;
+}
+.wd-kanbas-navigation li {
+  padding: 5px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  text-align: center;
+}
+.sidebar-icon {
+  color: red;
+}
+.wd-kanbas-navigation li.wd-active {
+  background-color: white;
+}
+.wd-kanbas-navigation li.wd-active a {
+  color: red;
+}
+.wd-kanbas-navigation a {
+  color: white;
+  text-decoration: none;
+}
