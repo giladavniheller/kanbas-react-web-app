@@ -1,4 +1,11 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  addModule,
+  deleteModule,
+  updateModule,
+  setModule,
+} from "./modulesReducer";
 // import "./index.css";
 import {
   FaEllipsisV,
@@ -7,15 +14,27 @@ import {
   FaCaretDown,
   FaPlus,
   FaGripVertical,
+  FaCaretUp,
 } from "react-icons/fa";
 import { useParams } from "react-router";
 import { modules } from "../../Database";
 import { courses } from "../../Database";
+import { KanbasState } from "../../store";
 
 function ModuleList() {
   const { courseId } = useParams();
-  const modulesList = modules.filter((module) => module.course === courseId);
-  const [selectedModule, setSelectedModule] = useState(modulesList[0]);
+  const moduleList = useSelector(
+    (state: KanbasState) => state.modulesReducer.modules
+  );
+  const module = useSelector(
+    (state: KanbasState) => state.modulesReducer.module
+  );
+  const dispatch = useDispatch();
+
+  const [selectedModule, setSelectedModule] = useState(
+    moduleList.filter((module) => module.course === courseId)[0]
+  );
+
   return (
     <>
       <div style={{ paddingBottom: "40px" }}>
@@ -45,124 +64,103 @@ function ModuleList() {
         </span>
       </div>
       <ul className="list-group wd-modules">
-        {modulesList.map((module) => (
-          <li
-            className="list-group-item"
-            onClick={() => setSelectedModule(module)}
+        <li className="list-group-item" style={{ display: "flex" }}>
+          <button
+            className="btn btn-success"
+            style={{ width: "100px" }}
+            onClick={() => dispatch(addModule({ ...module, course: courseId }))}
           >
-            <div>
-              <FaEllipsisV />
-              <FaCaretDown /> {module.name}
-              <span className="float-end">
-                <FaCheckCircle className="text-success" />
-                <FaCaretDown /> <FaPlus />
+            Add
+          </button>
+          <button
+            className="btn btn-primary"
+            style={{ width: "100px" }}
+            onClick={() => dispatch(updateModule(module))}
+          >
+            Update
+          </button>
+          <input
+            value={module.name}
+            onChange={(e) =>
+              dispatch(setModule({ ...module, name: e.target.value }))
+            }
+          />
+          <textarea
+            value={module.description}
+            onChange={(e) =>
+              dispatch(setModule({ ...module, description: e.target.value }))
+            }
+          />
+        </li>
+
+        {moduleList
+          .filter((module) => module.course === courseId)
+          .map((module) => (
+            <li
+              className="list-group-item"
+              onClick={() => setSelectedModule(module)}
+            >
+              <div>
                 <FaEllipsisV />
-              </span>
-            </div>
-            {selectedModule._id === module._id && (
-              <ul className="list-group">
-                {module.lessons?.map((lesson) => (
-                  <li className="completed-item list-group-item">
-                    <FaGripVertical style={{ color: "grey" }} /> {lesson.name}
-                    <span className="float-end">
-                      <FaCheckCircle className="text-success" />
-                      <FaEllipsisV />
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
-        ))}
+                {selectedModule._id === module._id ? (
+                  <FaCaretUp />
+                ) : (
+                  <FaCaretDown />
+                )}{" "}
+                {module.name}
+                <span className="float-end">
+                  <button
+                    className="btn btn-outline-primary"
+                    style={{
+                      marginRight: "15px",
+                      paddingTop: "2px",
+                      paddingBottom: "2px",
+                    }}
+                    onClick={() => dispatch(setModule(module))}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    className="btn btn-outline-danger"
+                    style={{
+                      marginRight: "15px",
+                      paddingTop: "2px",
+                      paddingBottom: "2px",
+                    }}
+                    onClick={() => dispatch(deleteModule(module._id))}
+                  >
+                    Delete
+                  </button>
+                  <FaCheckCircle className="text-success" />
+                  <FaCaretDown /> <FaPlus />
+                  <FaEllipsisV />
+                </span>
+              </div>
+              {selectedModule._id === module._id && (
+                <ul className="list-group">
+                  {module.lessons?.map(
+                    (lesson: {
+                      _id: string;
+                      name: string;
+                      description: string;
+                      module: string;
+                    }) => (
+                      <li className="completed-item list-group-item">
+                        <FaGripVertical style={{ color: "grey" }} />{" "}
+                        {lesson.name}
+                        <span className="float-end">
+                          <FaCheckCircle className="text-success" />
+                          <FaEllipsisV />
+                        </span>
+                      </li>
+                    )
+                  )}
+                </ul>
+              )}
+            </li>
+          ))}
       </ul>
     </>
   );
 }
 export default ModuleList;
-
-{
-  /* 
-    <li class="list-group-item">
-      
-        <ul class="list-group">
-            <li class="completed-item list-group-item">
-                <i class="fas fa-grip-vertical grip-icon"></i> LEARNING OBJECTIVES
-                <span class="float-end">
-                    <i class="fa fa-check-circle text-success"></i> <i class="fa fa-ellipsis-v ms-2"></i>
-                </span>
-            </li>
-            <li class="completed-item list-group-item">
-                <i class="fas fa-grip-vertical grip-icon grip-sub-item"></i> Introduction to the course
-                <span class="float-end">
-                    <i class="fa fa-check-circle text-success"></i> <i class="fa fa-ellipsis-v ms-2"></i>
-                </span>
-            </li>
-            <li class="completed-item list-group-item">
-                <i class="fas fa-grip-vertical grip-icon grip-sub-item"></i> Learn what is Web Development
-                <span class="float-end">
-                    <i class="fa fa-check-circle text-success"></i> <i class="fa fa-ellipsis-v ms-2"></i>
-                </span>
-            </li>
-            <li class="completed-item list-group-item">
-                <i class="fas fa-grip-vertical grip-icon grip-sub-item"></i> Creating a development environment
-                <span class="float-end">
-                    <i class="fa fa-check-circle text-success"></i> <i class="fa fa-ellipsis-v ms-2"></i>
-                </span>
-            </li>
-            <li class="completed-item list-group-item">
-                <i class="fas fa-grip-vertical grip-icon grip-sub-item"></i> Creating a Web Application
-                <span class="float-end">
-                    <i class="fa fa-check-circle text-success"></i> <i class="fa fa-ellipsis-v ms-2"></i>
-                </span>
-            </li>
-            <li class="completed-item list-group-item">
-                <i class="fas fa-grip-vertical grip-icon grip-sub-item"></i> Getting started with the 1st assignment
-                <span class="float-end">
-                    <i class="fa fa-check-circle text-success"></i> <i class="fa fa-ellipsis-v ms-2"></i>
-                </span>
-            </li>
-            <li class="completed-item list-group-item">
-                <i class="fas fa-grip-vertical grip-icon"></i> READING
-                <span class="float-end">
-                    <i class="fa fa-check-circle text-success"></i> <i class="fa fa-ellipsis-v ms-2"></i>
-                </span>
-            </li>
-            <li class="completed-item list-group-item">
-                <i class="fas fa-grip-vertical grip-icon grip-sub-item"></i> Full Stack Developer - Chapter 1 - Introduction
-                <span class="float-end">
-                    <i class="fa fa-check-circle text-success"></i> <i class="fa fa-ellipsis-v ms-2"></i>
-                </span>
-            </li>
-            <li class="completed-item list-group-item">
-                <i class="fas fa-grip-vertical grip-icon grip-sub-item"></i> Full Stack Developer - Chapter 2 - Creating User Interfaces With HTML
-                <span class="float-end">
-                    <i class="fa fa-check-circle text-success"></i> <i class="fa fa-ellipsis-v ms-2"></i>
-                </span>
-            </li>
-            <li class="completed-item list-group-item">
-                <i class="fas fa-grip-vertical grip-icon"></i> SLIDES
-                <span class="float-end">
-                    <i class="fa fa-check-circle text-success"></i> <i class="fa fa-ellipsis-v ms-2"></i>
-                </span>
-            </li>
-            <li class="completed-item list-group-item">
-                <i class="fas fa-grip-vertical grip-icon"></i><i class="fas fa-link link-icon"></i><a href="#" class="sub-link">Introduction to Web Development <i class="fas fa-external-link-alt"></i></a>
-                <span class="float-end">
-                    <i class="fa fa-check-circle text-success"></i> <i class="fa fa-ellipsis-v ms-2"></i>
-                </span>
-            </li>
-            <li class="completed-item list-group-item">
-                <i class="fas fa-grip-vertical grip-icon"></i><i class="fas fa-link link-icon"></i><a href="#" class="sub-link">Creating an HTTP server with Node.js <i class="fas fa-external-link-alt"></i></a>
-                <span class="float-end">
-                    <i class="fa fa-check-circle text-success"></i> <i class="fa fa-ellipsis-v ms-2"></i>
-                </span>
-            </li>
-            <li class="completed-item list-group-item">
-                <i class="fas fa-grip-vertical grip-icon"></i><i class="fas fa-link link-icon"></i><a href="#" class="sub-link">Creating a React Application <i class="fas fa-external-link-alt"></i></a>
-                <span class="float-end">
-                    <i class="fa fa-check-circle text-success"></i> <i class="fa fa-ellipsis-v ms-2"></i>
-                </span>
-            </li>
-        </ul>
-    </li> */
-}

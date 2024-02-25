@@ -80,25 +80,25 @@
   {
     "_id": "M201",
     "name": "Getting Good",
-    "description": "Basic aerodynamic concepts and fluid dynamics principles.",
+    "description": "Basic concepts surrounding greatness, coolness, etc.",
     "course": "CS1234",
     "lessons": [
       {
         "_id": "L201_1",
         "name": "Getting alright",
-        "description": "Overview of different types of rocket nozzles.",
+        "description": "Beginner level goodness, need to chill out.",
         "module": "CS1234"
       },
       {
         "_id": "L201_2",
         "name": "Getting pretty ok",
-        "description": "Understanding nozzle performance and efficiency.",
+        "description": "Intermediate chillin'.",
         "module": "CS1234"
       },
       {
         "_id": "L201_3",
         "name": "Finishing up",
-        "description": "Optimizing nozzle design for specific applications.",
+        "description": "You have mastered the art of the chiller. Now relax.",
         "module": "CS1234"
       }
     ]
@@ -106,7 +106,7 @@
   {
     "_id": "M202",
     "name": "Categories of Modern Life",
-    "description": "Understanding subsonic and supersonic aerodynamic behaviors.",
+    "description": "Understanding categorical data in regard to everyday living.",
     "course": "CS1234",
     "lessons": [
       {
@@ -118,7 +118,7 @@
       {
         "_id": "L202_2",
         "name": "Everything else",
-        "description": "Understanding nozzle performance and efficiency.",
+        "description": "Understanding everything in all other categories.",
         "module": "CS1234"
       }
     ]
@@ -126,25 +126,25 @@
   {
     "_id": "M203",
     "name": "Good Bagel Combinations",
-    "description": "Study of aerodynamic heating and thermal protection systems.",
+    "description": "Study of bagels and accompanying foodstuffs.",
     "course": "CS1234",
     "lessons": [
       {
         "_id": "L203_1",
         "name": "Sesame bagel & garlic and chive cream cheese",
-        "description": "Overview of different types of politics and prose.",
+        "description": "An introductory investigation into Pavement Coffee and their bagel options.",
         "module": "CS1234"
       },
       {
         "_id": "L203_2",
         "name": "Everything bagel with normal cream cheese",
-        "description": "Understanding nozzle performance and efficiency.",
+        "description": "A modern day classic, not too flashy but always dependable.",
         "module": "CS1234"
       },
       {
         "_id": "L203_3",
         "name": "Anything as long as there's lox",
-        "description": "Understanding nozzle performance and efficiency.",
+        "description": "Understanding the fact that sometimes you have to take what you're given.",
         "module": "CS1234"
       }
     ]
@@ -152,25 +152,25 @@
   {
     "_id": "M301",
     "name": "Vegetables In Kellan's Fridge",
-    "description": "Fundamentals of designing spacecraft structures and materials selection.",
+    "description": "What's in Kellan's Fridge? Let's find out.",
     "course": "ARTF1124",
     "lessons": [
       {
         "_id": "L301",
         "name": "Four Carrots",
-        "description": "Overview of different types of rocket nozzles.",
+        "description": "Ooh! More than three but definitely fewer than five.",
         "module": "ARTF1124"
       },
       {
         "_id": "L302",
         "name": "Three Tomatos",
-        "description": "Understanding nozzle performance and efficiency.",
+        "description": "Tomato tomato, kinda need to say it out loud to hear the difference.",
         "module": "ARTF1124"
       },
       {
         "_id": "L303",
         "name": "A Head of Lettuce",
-        "description": "Optimizing nozzle design for specific applications.",
+        "description": "Not a shoulder, knee, or toe.",
         "module": "ARTF1124"
       }
     ]
@@ -178,25 +178,25 @@
   {
     "_id": "M302",
     "name": "Animals Kellan Could Fight",
-    "description": "Understanding orbital dynamics and mission planning.",
+    "description": "Understanding which creature Kellan could best in a bare knuckle brawl.",
     "course": "ARTF1124",
     "lessons": [
       {
         "_id": "L301",
         "name": "Colony of Ants (maybe)",
-        "description": "Overview of different types of rocket nozzles.",
+        "description": "Individually a breeze, together a force to be reckoned with.",
         "module": "ARTF1124"
       },
       {
         "_id": "L302",
         "name": "Grizzly Bear",
-        "description": "Understanding nozzle performance and efficiency.",
+        "description": "Easy peasy lemon squeezy.",
         "module": "ARTF1124"
       },
       {
         "_id": "L303",
         "name": "Every Pokemon",
-        "description": "Optimizing nozzle design for specific applications.",
+        "description": "Learn why many experts are skeptical.",
         "module": "ARTF1124"
       }
     ]
@@ -204,25 +204,25 @@
   {
     "_id": "M999",
     "name": "Life is Like a",
-    "description": "Understanding orbital dynamics and mission planning.",
+    "description": "... I guess we'll find out on this one.",
     "course": "ARTF1124",
     "lessons": [
       {
         "_id": "L999_1",
         "name": "Box of Chocolates",
-        "description": "Overview of different types of rocket nozzles.",
+        "description": "Forrest Gump would agree.",
         "module": "ARTF1124"
       },
       {
         "_id": "L999_2",
         "name": "Lemonade Stand (You have the lemons)",
-        "description": "Understanding nozzle performance and efficiency.",
+        "description": "Lemonade Mouth stans have been saying this.",
         "module": "ARTF1124"
       },
       {
         "_id": "L999_3",
         "name": "Lemonade Stand (You do not yet have the lemons)",
-        "description": "Optimizing nozzle design for specific applications.",
+        "description": "This part is much trickier, kinda need the lemons for this one.",
         "module": "ARTF1124"
       }
     ]
@@ -230,31 +230,31 @@
   {
     "_id": "M401",
     "name": "Excellency In Rhyming",
-    "description": "Understanding orbital dynamics and mission planning.",
+    "description": "Scooby Dooby Dippity Do.",
     "course": "ARTF1125",
     "lessons": [
       {
         "_id": "L401_1",
         "name": "Loosey Goosey",
-        "description": "Overview of different types of rocket nozzles.",
+        "description": "Gotta make sure to tighten things real good.",
         "module": "ARTF1125"
       },
       {
         "_id": "L401_2",
         "name": "Walky Talky",
-        "description": "Understanding nozzle performance and efficiency.",
+        "description": "Fun to say and fun to use.",
         "module": "ARTF1125"
       },
       {
         "_id": "L401_3",
         "name": "See ya' later aligator",
-        "description": "Optimizing nozzle design for specific applications.",
+        "description": "In a while crocadile.",
         "module": "ARTF1125"
       },
       {
         "_id": "L401_4",
         "name": "The sun shines sometimes",
-        "description": "Optimizing nozzle design for specific applications.",
+        "description": "Paul McCartney was definitely onto something.",
         "module": "ARTF1125"
       }
     ]
@@ -262,25 +262,25 @@
   {
     "_id": "M402",
     "name": "Meals in the Day",
-    "description": "Understanding orbital dynamics and mission planning.",
+    "description": "Understanding when you should be eating.",
     "course": "ARTF1125",
     "lessons": [
       {
         "_id": "L402_1",
         "name": "Breakfast",
-        "description": "Overview of different types of rocket nozzles.",
+        "description": "A timeless classic.",
         "module": "ARTF1125"
       },
       {
         "_id": "L402_2",
         "name": "Second Breakfast",
-        "description": "Understanding nozzle performance and efficiency.",
+        "description": "Hobbits have been on this wave for quite some time.",
         "module": "ARTF1125"
       },
       {
         "_id": "402_3",
         "name": "Midnight Snack",
-        "description": "Optimizing nozzle design for specific applications.",
+        "description": "A hidden gem, many do not realize you can eat this late at night.",
         "module": "ARTF1125"
       }
     ]
@@ -288,57 +288,57 @@
   {
     "_id": "M403",
     "name": "Intersection of Colors and Fruits",
-    "description": "Understanding orbital dynamics and mission planning.",
+    "description": "Two classic categories with some suprising intersectionalities.",
     "course": "ARTF1125",
     "lessons": [
       {
         "_id": "L403_1",
         "name": "Starfruit",
-        "description": "Overview of different types of rocket nozzles.",
+        "description": "You heard it here first.",
         "module": "ARTF1125"
       },
       {
         "_id": "L403_2",
         "name": "Grape",
-        "description": "Understanding nozzle performance and efficiency.",
+        "description": "Eat em' by the dozen for a reason.",
         "module": "ARTF1125"
       },
       {
         "_id": "L403_3",
         "name": "Watermelon",
-        "description": "Optimizing nozzle design for specific applications.",
+        "description": "At the beginning of time there were four elements...",
         "module": "ARTF1125"
       },
       {
         "_id": "L403_4",
         "name": "Banana",
-        "description": "Optimizing nozzle design for specific applications.",
+        "description": "Bannana ramma, bannan phone, bananananananana.",
         "module": "ARTF1125"
       }
     ]
   },
   {
     "_id": "M501",
-    "name": "Almost White",
-    "description": "Understanding orbital dynamics and mission planning.",
+    "name": "Off Whites",
+    "description": "Understanding colors and their nearby neighbors.",
     "course": "DS3000",
     "lessons": [
       {
         "_id": "L501_1",
         "name": "Eggshell",
-        "description": "Overview of different types of rocket nozzles.",
+        "description": "Cracking me up fr.",
         "module": "DS3000"
       },
       {
         "_id": "L501_2",
         "name": "Bone",
-        "description": "Understanding nozzle performance and efficiency.",
+        "description": "Oof ouch owie! Definitely don't wanna break these.",
         "module": "DS3000"
       },
       {
         "_id": "L501_3",
-        "name": "Elizabeth Warren",
-        "description": "Optimizing nozzle design for specific applications.",
+        "name": "Cream",
+        "description": "Perfect in a cup of joe.",
         "module": "DS3000"
       }
     ]
@@ -346,19 +346,19 @@
   {
     "_id": "M502",
     "name": "Extremeties of a black and white scale",
-    "description": "Understanding orbital dynamics and mission planning.",
+    "description": "Understanding either polar ends is very important.",
     "course": "DS3000",
     "lessons": [
       {
         "_id": "L502_1",
         "name": "Black",
-        "description": "Overview of different types of rocket nozzles.",
+        "description": "Known from such things as Closing Your Eyes.",
         "module": "DS3000"
       },
       {
         "_id": "L502_2",
         "name": "White",
-        "description": "Understanding nozzle performance and efficiency.",
+        "description": "Known from such things as What You See At the End of the Tunnel.",
         "module": "DS3000"
       }
     ]
@@ -366,25 +366,25 @@
   {
     "_id": "M503",
     "name": "Sweet Treats and Nice Things",
-    "description": "Understanding orbital dynamics and mission planning.",
+    "description": "Yummy Scrumptous Yup Yup Yup.",
     "course": "DS3000",
     "lessons": [
       {
         "_id": "L503_1",
         "name": "Pastry",
-        "description": "Overview of different types of rocket nozzles.",
+        "description": "Overview of a little treat.",
         "module": "DS3000"
       },
       {
         "_id": "L503_2",
         "name": "Chocolate (Strawberry)",
-        "description": "Understanding nozzle performance and efficiency.",
+        "description": "Very good they sell them at college convenience on Huntington.",
         "module": "DS3000"
       },
       {
         "_id": "L503_3",
         "name": "Green Tea",
-        "description": "Understanding nozzle performance and efficiency.",
+        "description": "Tasty sweet and even with a little caffein.",
         "module": "DS3000"
       }
     ]
@@ -392,25 +392,25 @@
   {
     "_id": "M504",
     "name": "Bad Bad Really Bad Things",
-    "description": "Understanding orbital dynamics and mission planning.",
+    "description": "Understanding things you should avoid.",
     "course": "DS3000",
     "lessons": [
       {
         "_id": "L504_1",
         "name": "War",
-        "description": "Overview of different types of rocket nozzles.",
+        "description": "Bad!.",
         "module": "DS3000"
       },
       {
         "_id": "L504_2",
         "name": "Stubbing my toe",
-        "description": "Understanding nozzle performance and efficiency.",
+        "description": "Really bad!",
         "module": "DS3000"
       },
       {
         "_id": "L504_3",
         "name": "Taxes",
-        "description": "Understanding nozzle performance and efficiency.",
+        "description": "Super bad!",
         "module": "DS3000"
       }
     ]
@@ -418,25 +418,25 @@
   {
     "_id": "M601",
     "name": "Winkler Songs (Best Of)",
-    "description": "Understanding orbital dynamics and mission planning.",
+    "description": "Banger after Banger after Banger.",
     "course": "CS3000",
     "lessons": [
       {
         "_id": "L601_1",
         "name": "Hillside Home",
-        "description": "Overview of different types of rocket nozzles.",
+        "description": "Like when you live on Hillside.",
         "module": "CS3000"
       },
       {
         "_id": "L601_2",
         "name": "Hindsight",
-        "description": "Understanding nozzle performance and efficiency.",
+        "description": "Like when you are thinking back on something with new knowledge.",
         "module": "CS3000"
       },
       {
         "_id": "L601_3",
         "name": "Evening Plans",
-        "description": "Understanding nozzle performance and efficiency.",
+        "description": "Wanna hang out tonight?",
         "module": "CS3000"
       }
     ]
@@ -444,25 +444,25 @@
   {
     "_id": "M699",
     "name": "Bob Dylan Songs (Best Of)",
-    "description": "Understanding orbital dynamics and mission planning.",
+    "description": "Robert Zimmerman: A Case Study.",
     "course": "CS3000",
     "lessons": [
       {
         "_id": "L601_1",
         "name": "Piano Man",
-        "description": "Overview of different types of rocket nozzles.",
+        "description": "His first major hit.",
         "module": "CS3000"
       },
       {
         "_id": "L601_2",
         "name": "Piano Man (Reprise)",
-        "description": "Understanding nozzle performance and efficiency.",
+        "description": "Gotta add a reprise.",
         "module": "CS3000"
       },
       {
         "_id": "L601_3",
         "name": "Munch",
-        "description": "Understanding nozzle performance and efficiency.",
+        "description": "You think YOU'RE the fart???",
         "module": "CS3000"
       }
     ]
@@ -470,25 +470,25 @@
   {
     "_id": "M602",
     "name": "Dates That Might be Life Changing Events",
-    "description": "Understanding orbital dynamics and mission planning.",
+    "description": "Make sure to check your calendar.",
     "course": "CS3000",
     "lessons": [
       {
         "_id": "L602_1",
         "name": "Retirement",
-        "description": "Overview of different types of rocket nozzles.",
+        "description": "Can't wait fr fr.",
         "module": "CS3000"
       },
       {
         "_id": "L602_2",
         "name": "April 3rd, 2027",
-        "description": "Understanding nozzle performance and efficiency.",
+        "description": "Stay attentivie (O.O)",
         "module": "CS3000"
       },
       {
         "_id": "L602_3",
         "name": "The Day of my Daughter's Wedding",
-        "description": "Understanding nozzle performance and efficiency.",
+        "description": "You come to me to ask for a favor???",
         "module": "CS3000"
       }
     ]

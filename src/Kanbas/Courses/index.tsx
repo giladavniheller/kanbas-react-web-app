@@ -1,4 +1,3 @@
-import { courses } from "../../Kanbas/Database";
 import {
   Link,
   Navigate,
@@ -37,7 +36,21 @@ import Home from "./Home";
 import Assignments from "./Assignments";
 import { useState } from "react";
 import path from "path";
-function Courses() {
+function Courses({
+  courses,
+}: {
+  courses: {
+    _id: string;
+    name: string;
+    number: string;
+    fullCode: string;
+    semester: string;
+    startDate: string;
+    endDate: string;
+    image: string;
+    section: string;
+  }[];
+}) {
   const [showSubMenu, setShowSubMenu] = useState(false);
   const [showCanvasMenu, setShowCanvasMenu] = useState(false);
   const { courseId } = useParams();
@@ -50,8 +63,6 @@ function Courses() {
   if (coursesIndex !== -1 && segments[coursesIndex + 2]) {
     page = segments[coursesIndex + 2];
   }
-  console.log(segments);
-  console.log(location);
 
   return (
     <div>
@@ -290,7 +301,7 @@ function Courses() {
           <span
             style={{ color: "red", paddingLeft: "20px", cursor: "pointer" }}
           >
-            {course?._id} {course?.name} SEC0{course?.section}
+            {course?.number} {course?.name} SEC0{course?.section}
           </span>
           <HiChevronRight
             size={15}
