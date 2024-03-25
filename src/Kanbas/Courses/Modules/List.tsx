@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   addModule,
   deleteModule,
   updateModule,
   setModule,
+  setModules,
 } from "./modulesReducer";
-// import "./index.css";
+import * as client from "./client";
 import {
   FaEllipsisV,
   FaCheckCircle,
@@ -17,8 +18,6 @@ import {
   FaCaretUp,
 } from "react-icons/fa";
 import { useParams } from "react-router";
-import { modules } from "../../Database";
-import { courses } from "../../Database";
 import { KanbasState } from "../../store";
 
 function ModuleList() {
@@ -31,9 +30,33 @@ function ModuleList() {
   );
   const dispatch = useDispatch();
 
-  const [selectedModule, setSelectedModule] = useState(
-    moduleList.filter((module) => module.course === courseId)[0]
-  );
+  const [selectedModule, setSelectedModule] = useState({
+    _id: "sampleID",
+    name: "sampleName",
+    description: "sampleDescription",
+    course: "sampleCourse",
+    lessons: [],
+  });
+  const handleAddModule = () => {
+    client.createModule(courseId, module).then((module) => {
+      dispatch(addModule(module));
+    });
+  };
+  const handleDeleteModule = (moduleId: string) => {
+    client.deleteModule(moduleId).then((status) => {
+      dispatch(deleteModule(moduleId));
+    });
+  };
+  const handleUpdateModule = async () => {
+    const status = await client.updateModule(module);
+    dispatch(updateModule(module));
+  };
+
+  useEffect(() => {
+    client
+      .findModulesForCourse(courseId)
+      .then((modules) => dispatch(setModules(modules)));
+  }, [courseId]);
 
   return (
     <>
@@ -68,14 +91,14 @@ function ModuleList() {
           <button
             className="btn btn-success"
             style={{ width: "100px" }}
-            onClick={() => dispatch(addModule({ ...module, course: courseId }))}
+            onClick={handleAddModule}
           >
             Add
           </button>
           <button
             className="btn btn-primary"
             style={{ width: "100px" }}
-            onClick={() => dispatch(updateModule(module))}
+            onClick={handleUpdateModule}
           >
             Update
           </button>
@@ -127,7 +150,7 @@ function ModuleList() {
                       paddingTop: "2px",
                       paddingBottom: "2px",
                     }}
-                    onClick={() => dispatch(deleteModule(module._id))}
+                    onClick={() => handleDeleteModule(module._id)}
                   >
                     Delete
                   </button>

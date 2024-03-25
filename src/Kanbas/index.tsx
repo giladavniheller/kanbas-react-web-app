@@ -2,13 +2,23 @@ import Dashboard from "./Dashboard";
 import KanbasNavigation from "./Navigation";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Courses from "./Courses";
-import { useState } from "react";
-import { courses as dbCourses } from "./Database";
+import { useEffect, useState } from "react";
 import store from "./store";
 import { Provider } from "react-redux";
-
+import axios from "axios";
+const API_BASE = process.env.REACT_APP_API_BASE;
 function Kanbas() {
-  const [courses, setCourses] = useState(dbCourses);
+  const [courses, setCourses] = useState<any[]>([]);
+
+  const COURSES_API = `${API_BASE}/courses`;
+  const findAllCourses = async () => {
+    const response = await axios.get(COURSES_API);
+    setCourses(response.data);
+  };
+  useEffect(() => {
+    findAllCourses();
+  }, []);
+
   const [course, setCourse] = useState({
     _id: "0",
     name: "New Course",
@@ -20,14 +30,17 @@ function Kanbas() {
     image: "../images/pinkBackground.png",
     section: "1",
   });
-  const addNewCourse = () => {
-    const newCourse = { ...course, _id: new Date().getTime().toString() };
-    setCourses([...courses, { ...course, ...newCourse }]);
+  const addNewCourse = async () => {
+    const response = await axios.post(COURSES_API, course);
+    setCourses([...courses, response.data]);
   };
-  const deleteCourse = (courseId: string) => {
+  const deleteCourse = async (courseId: string) => {
+    const response = await axios.delete(`${COURSES_API}/${courseId}`);
     setCourses(courses.filter((course) => course._id !== courseId));
   };
-  const updateCourse = () => {
+  const updateCourse = async () => {
+    const response = await axios.put(`${COURSES_API}/${course._id}`, course);
+
     setCourses(
       courses.map((c) => {
         if (c._id === course._id) {
@@ -62,10 +75,7 @@ function Kanbas() {
                 />
               }
             />
-            <Route
-              path="Courses/:courseId/*"
-              element={<Courses courses={courses} />}
-            />
+            <Route path="Courses/:courseId/*" element={<Courses />} />
           </Routes>
         </div>
       </div>
